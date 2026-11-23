@@ -21,7 +21,9 @@
     - The jeep can jump, allowing it to evade rockets and jump over fast suicide-car style enemies or anti-vehicle mines
     - The ground is always completely flat, so there is no need for terrain following for the jeep.
     - The jump high of the jeep is low, and the heli has a minimal height, so actually they cannot even overlap / collide. Whether you play alone or in coop also thus does not affect the space you have to dodge enemy attacks in any way.
-* Enemy movement: Enemies can just go off-screen or stay on screen forever, depending on enemy type (like suicide cars trying to hit jeep player, or fixed stuff like ground turrets, they will just leave screen if not destroyed). Some heli enemies may linger around (but only at right part of screen, near their entry point: neither of the players can shoot backwards) if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave or for other reasons, not even on death.
+* Enemy movement:
+    - Enemies can just go off-screen or stay on screen forever, depending on enemy type (like suicide cars trying to hit jeep player, or fixed stuff like ground turrets, they will just leave screen if not destroyed).
+    - Some enemies may linger around, i.e., fly/drive backwards (from their perspective) with scroll speed, i.e., just stand still relative to the pixel position on the monitor. (But they can only hang out in this way at the right part of screen, near their entry point: neither of the players can shoot backwards) if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave or for other reasons, not even on death.
 * Player death: the player respawns quickly (the world keeps scrolling), causing damage that destroys basic enemies in a medium area around it, and is invulnerable for a few seconds after respawning. They respawn where they died.
 * In coop, both players see the SAME screen all the time: its not split-screen, its shared screen.
 * Player weapons that enable a single player to still complete the maps:
@@ -49,16 +51,45 @@
     - Each has a few minutes of play time and they introduce new harder enemies (but older enemies also can occur, so variety also increases).
     - Each level features a boss at the end.
 * Scoring: in coop, the player who gets the last hit (killing blow) on an enemy gets the score, except for bosses its always shared.
-* HUD: minimal, at the top of screen only, not over the play area. Shows number of lifes, score.
+* HUD: minimal, at the top of screen only, not over the play area. Shows number of lifes, score, shield/invulnerability state, upgrades (double-shor or not). The shields are also clearly visible in-game as a cloud around player, and the double-shot from seeing your shots, so the HUD is only very rarely consulted by players.
+* Pause button.
+* Game speed independent of frame rate. Frame rate cap to save power/noise/heat, in menu.
+* Rebindable controls, with the following defaults:
+    - Keyboard:
+        * Jeep:
+            * a: move left
+            * d: move right
+            * w: jump
+            * left shift: cannon angle up
+            * left ctrl: cannot angle down
+            * <|> (the key between left shift and y): shoot
+            * b: alternative for cannon angle up
+            * n: alternative for cannot angle down
+            * m: alternative for shoot
+        * Helicopter
+            * arrow-up: fly up
+            * arrow-down: fly down
+            * arrow-left: fly left
+            * arrow-right: fly right (combinations like up+right = 45 degrees up are possible)
+            * right control: fire
+        * General:
+            * pause key: pause/continue
+            * ESC: open menu (pauses as well)
+            * menu controls:
+                * wasd and arrow keys possible. the 2 middle keys navigate up/down in menu.
+                * the right-most key (right-arrow/d) is confirm/enter menu level (alternative key: Enter)
+                * the left-most key (left-arrow/a) is leave menu level (alternative key: escape)
+                * if paused, the menu has a continue button
 
 ## Prototype
 * 1 level (hand-built), with placeholder graphics and sounds
-
+* Default key / control layout only
 
 ## Required only at late stage in development
 * More complex goose miniboss with animation that gets constructed in the air out of several flying parts
 * Proper sounds, music, etc. But we need some placeholder sounds for the prototype.
 * Level editor
+* Rebindable controls
 
 
 ## Explicitely out of scope:
