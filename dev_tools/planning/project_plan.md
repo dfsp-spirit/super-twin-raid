@@ -43,9 +43,14 @@
 * It would be very nice to have an easy-to-use level editor, maybe even campaign editor (just a list of levels with ordering).
 * One should be able to unlock something by finishing levels. Not permanent upgrades, but maybe a different skin for your vehicle or something? Need to think about this a bit more.
 
+## Required only at late stage in development
+* More complex goose miniboss with animation that gets constructed in the air out of several flying parts
+* Proper sounds, music, etc
+
 
 ## Explicitely out of scope:
 
 * Non-local multiplayer over the internet
 * Rogue-lite progression with permanent upgrades
 * 2.5D or 3D, support for meshes, lighting, etc. It's strictly a 2D sprite-based game.
+* Floor as curves, and the thus the need for the jeep to follow special terrain. The ground is always flat.
