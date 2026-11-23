@@ -14,14 +14,15 @@
 ## Required Features:
 
 * Auto-scrolling game world in 2D, it never stops, not even at bosses.
-* Asymmetrical gameplay option: one can play in helicopter or jeep, and in coop, one of each. The levels are designed in a way that it is possible to finish them alone and the jeep or the helicopter. We may need to mark enemies as coop-only to adjust difficulty, maybe even heli-only or jeep-only in single-player later. Or adapt difficulty in other ways, e.g., scale enemy health.
+* Asymmetrical gameplay option: one can play in helicopter or jeep, and in coop, one of each. The levels are designed in a way that it is possible to finish them alone and the jeep or the helicopter. We may need to mark enemies as coop-only to adjust difficulty, maybe even heli-only or jeep-only in single-player later. Or adapt difficulty in other ways, e.g., scale enemy health. Vehicle is fixed for entire run once selected.
 * Player Movement:
     - Both the heli and the jeep can move left and right (forward and backwards, from their own perspective) within the moving field of view.
     - The heli can also move up and down (including 45 degrees down/up)
     - The jeep can jump, allowing it to evade rockets and jump over fast suicide-car style enemies or anti-vehicle mines
     - The ground is always completely flat, so there is no need for terrain following for the jeep.
     - The jump high of the jeep is low, and the heli has a minimal height, so actually they cannot even overlap / collide. Whether you play alone or in coop also thus does not affect the space you have to dodge enemy attacks in any way.
-* Enemy movement: Enemies can just go off-screen or stay on screen forever, depending on enemy type (like suicide cars trying to hit jeep player, or fixed stuff like ground turrets, they will just leave screen if not destroyed). Some heli enemies may linger around if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave.
+* Enemy movement: Enemies can just go off-screen or stay on screen forever, depending on enemy type (like suicide cars trying to hit jeep player, or fixed stuff like ground turrets, they will just leave screen if not destroyed). Some heli enemies may linger around (but only at right part of screen, near their entry point: neither of the players can shoot backwards) if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave or for other reasons, not even on death.
+* Player death: the player respawns quickly (the world keeps scrolling), causing damage that destroys basic enemies in a medium area around it, and is invulnerable for a few seconds after respawning. They respawn where they died.
 * In coop, both players see the SAME screen all the time: its not split-screen, its shared screen.
 * Player weapons that enable a single player to still complete the maps:
     - the Heli has a powerful weapon that shoots straight forward (a line of missiles, or with upgrade 2 lines, that acts almost like a beam: its missile after missile) AND a small gun that fires down and forward at a fixed 45 degree angle
