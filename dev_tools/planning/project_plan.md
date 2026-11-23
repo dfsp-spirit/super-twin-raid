@@ -5,15 +5,27 @@
 ## Properties:
 
 * The entire game consists of 2D sprites, it is not 2.5D and has no support for displaying meshes or other 3D assets, no dynamic lighting, etc.
-* It should be easy to generate distribution-ready versions for PC (x86, x64).
-* The game is a hobby project, and it is a priority to get to a testable version early, to prevent lots of wasted effort with developing too many complex systems too early that may turn out not to be fun and may need to get replaced
+* It should be easy to generate distribution-ready versions for PC (x86, x64). If feasible without much extra effort, a web-based version would be a nice extra.
+* The game is a hobby project, and it is a priority to get to a testable prototype version early, to prevent lots of wasted effort with developing too many complex systems too early that may turn out not to be fun and may need to get replaced
 * It should use an established game engine, like Godot
 * We do not intend to invest (lots of) money into store assets or other things. We prefer to make our own, simple assets (sprites, sounds). For the prototype, using placeholders like art with an open license is fine, but in the end we want a consisten art style, not a collection of random assets. Looks are important to us.
-* asymmetrical gameplay option: one can play in helicopter or jeep, and in coop, one of each. The levels are designed in a way that it is possible to finish them alone and the jeep or the helicopter.
 
 
 ## Required Features:
 
+* Auto-scrolling game world in 2D, it never stops, not even at bosses.
+* Asymmetrical gameplay option: one can play in helicopter or jeep, and in coop, one of each. The levels are designed in a way that it is possible to finish them alone and the jeep or the helicopter. We may need to mark enemies as coop-only to adjust difficulty, maybe even heli-only or jeep-only in single-player later. Or adapt difficulty in other ways.
+* Player Movement:
+    - Both the heli and the jeep can move left and right (forward and backwards, from their own perspective) within the moving field of view.
+    - The heli can also move up and down (including 45 degrees down/up)
+    - The jeep can jump, allowing it to evade rockets and jump over fast suicide-car style enemies or anti-vehicle mines
+    - The ground is always completely flat, so there is no need for terrain following for the jeep.
+* Enemy movement: Enemies can just go off-screen or stay on screen forever, depending on enemy type (like suicide cars trying to hit jeep player, or fixed stuff like ground turrets, they will just leave screen if not destroyed). Some heli enemies may linger around if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave.
+* In coop, both players see the SAME screen all the time: its not split-screen, its shared screen.
+* Player weapons that enable a single player to still complete the maps:
+    - the Heli has a powerful weapon that shoots straight forward (a line of missiles, or with upgrade 2 lines, that acts almost like a beam: its missile after missile) AND a small gun that fires down and forward at a fixed 45 degree angle
+    - the Jeep has a single cannon in the back that should a similar stream of bullets (2 streams with powerup). But using 2 keys for gun-up and gun-down, the weapon can be aimed: from straight up to parallel to the ground, in front of the jeep.
+    - For the heli, the powerup just adds a parallel stream of front missiles, and does not affect the 45 degrees gun. for the jeep, the powerup adds a 2nd stream of bullets to the aimable gun, however not in parallel, but with a slight angle of about 5 to 10 degrees, so the jeep can cover a slighlty whider area with the upgrade (to make aiming at trash targets easier), but the angle is low so that larger, powerful enemies like bosses can still be hit with both streams of bullets at once.
 * Input support: Game controllers (e.g., Xbox One controller for PC), and alternatively keyboard. It should be possible to play with 2 people on one keyboard for people who do own any controllers.
 * Pre-made levels, with hard-coded positions for enemies (including rows of them flying in typical shmup patterns).
 * Upgrades: only during a run: upgrades like double-shot that are lost on hit
@@ -28,6 +40,8 @@
 * Killing enemies increases ones score
 * Players have a (shared in coop) limited number of lives, and a number of continues (configurable, in settings). Using a continue resets your score to 0.
 * The game should prevent the annoying shmup trap where a player is lost because they were hit once and now do not have the double-shot (or other powerups) anymore, and this lack of firepower leads to inevitable death later. Preventing such issues can be achieved, for example, by providing again the double-shot power-up before bosses or hard parts of a map. Picking up a power-up you already have should give a score bonus instead.
+* It would be very nice to have an easy-to-use level editor, maybe even campaign editor (just a list of levels with ordering).
+* One should be able to unlock something by finishing levels. Not permanent upgrades, but maybe a different skin for your vehicle or something? Need to think about this a bit more.
 
 
 ## Explicitely out of scope:
