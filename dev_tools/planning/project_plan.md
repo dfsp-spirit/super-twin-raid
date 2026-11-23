@@ -54,24 +54,24 @@
 * HUD: minimal, at the top of screen only, not over the play area. Shows number of lifes, score, shield/invulnerability state, upgrades (double-shor or not). The shields are also clearly visible in-game as a cloud around player, and the double-shot from seeing your shots, so the HUD is only very rarely consulted by players.
 * Pause button.
 * Game speed independent of frame rate. Frame rate cap to save power/noise/heat, in menu.
-* Rebindable controls, with the following defaults:
+* Controls, with the following defaults:
     - Keyboard:
         * Jeep:
             * a: move left
             * d: move right
             * w: jump
             * left shift: cannon angle up
-            * left ctrl: cannot angle down
+            * left ctrl: cannon angle down
             * <|> (the key between left shift and y): shoot
             * b: alternative for cannon angle up
-            * n: alternative for cannot angle down
+            * n: alternative for cannon angle down
             * m: alternative for shoot
         * Helicopter
             * arrow-up: fly up
             * arrow-down: fly down
             * arrow-left: fly left
             * arrow-right: fly right (combinations like up+right = 45 degrees up are possible)
-            * right control: fire
+            * right control: shoot
         * General:
             * pause key: pause/continue
             * ESC: open menu (pauses as well)
@@ -80,6 +80,17 @@
                 * the right-most key (right-arrow/d) is confirm/enter menu level (alternative key: Enter)
                 * the left-most key (left-arrow/a) is leave menu level (alternative key: escape)
                 * if paused, the menu has a continue button
+    - Game Controller
+        * Jeep
+            * left DPAD or left stick: move left/right.
+            * right trigger or A (lower of the 4 buttons on the right): shoot
+            * Y (left of the 4 buttons on the right): jump
+            * left/right shoulder button: change cannon angle (left: up, right: down/to front)
+        * Helicopter:
+            * left DPAD or left stick: move
+            * right trigger or A (lower of the 4 buttons on the right): shoot
+        * General:
+            * menu button: menu
 
 ## Prototype
 * 1 level (hand-built), with placeholder graphics and sounds
