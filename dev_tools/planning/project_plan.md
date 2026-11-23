@@ -23,7 +23,9 @@
     - The jump high of the jeep is low, and the heli has a minimal height, so actually they cannot even overlap / collide. Whether you play alone or in coop also thus does not affect the space you have to dodge enemy attacks in any way.
 * Enemy movement:
     - Enemies can just go off-screen or stay on screen forever, depending on enemy type (like suicide cars trying to hit jeep player, or fixed stuff like ground turrets, they will just leave screen if not destroyed).
-    - Some enemies may linger around, i.e., fly/drive backwards (from their perspective) with scroll speed, i.e., just stand still relative to the pixel position on the monitor. (But they can only hang out in this way at the right part of screen, near their entry point: neither of the players can shoot backwards) if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave or for other reasons, not even on death.
+    - Some enemies (air only) may linger around for a limited and defined time, i.e., fly/drive backwards (from their perspective) with scroll speed, i.e., just stand still relative to the pixel position on the monitor. (But they can only hang out in this way at the right part of screen, near their entry point: neither of the players can shoot backwards) if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave or for other reasons, not even on death.
+    Note that the level design must make sure lingering enemies do not overlap with the next enemies spawning during linger time.
+    - Bosses always linger, without any time limit.
 * Player death: the player respawns quickly (the world keeps scrolling), causing damage that destroys basic enemies in a medium area around it, and is invulnerable for a few seconds after respawning. They respawn where they died.
 * In coop, both players see the SAME screen all the time: its not split-screen, its shared screen.
 * Player weapons that enable a single player to still complete the maps:
@@ -42,7 +44,8 @@
 * Shields that give temporary invulnerability, but can also alternatively be shot with a few hits to explode, dealing massive damage to all enemies on screen. Exploding a shield also explodes all other shield powerups currently on the screen (but not shields which the player already has active)
 * Collisions kill the player, unless they have a shield active, in which case the player deals high damage in short time intervalls to enemies they touch. In coop, the heli and jeep cannot collide (due to different space/heli min flying height) or hurt each other
 * Killing enemies increases ones score
-* Players have a (shared in coop) limited number of lives, and a number of continues (configurable, in settings). Using a continue resets your score to 0 and restarts the current level.
+* Players have a (shared in coop) limited number of lives, and a number of continues (configurable, in settings). Using a continue resets your score to 0 and restarts the current level. In coop, they get more lives than one would get in SP as there are more opportunities to die. Score never gives extra lifes, it is just a score. We may introduce an extra life as a collectable item.
+* Powerups must be placed on screen so that either jeep or heli can pick them up (their area of service is distinct, so that is the case automatically), and that one player cannot take both.
 * The game should prevent the annoying shmup trap where a player is lost because they were hit once and now do not have the double-shot (or other powerups) anymore, and this lack of firepower leads to inevitable death later. Preventing such issues can be achieved, for example, by providing again the double-shot power-up before bosses or hard parts of a map. Picking up a power-up you already have should give a score bonus instead.
 * It would be very nice to have an easy-to-use level editor, maybe even campaign editor (just a list of levels with ordering).
 * One should be able to unlock something by finishing levels. Not permanent upgrades, but maybe a different skin for your vehicle or something? Need to think about this a bit more.
@@ -95,6 +98,11 @@
 ## Prototype
 * 1 level (hand-built), with placeholder graphics and sounds
 * Default key / control layout only
+* key questions to answer:
+    - Is jeep aiming fun?
+    - Does jeep have to many keys?
+    - Is the screen still readbale in coop?
+    - Can the heli#s weak 45 degrees cannon damage cope with ground threats?
 
 ## Required only at late stage in development
 * More complex goose miniboss with animation that gets constructed in the air out of several flying parts
