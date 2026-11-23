@@ -48,7 +48,7 @@
     - Each has a few minutes of play time and they introduce new harder enemies (but older enemies also can occur, so variety also increases).
     - Each level features a boss at the end.
 * Scoring: in coop, the player who gets the last hit (killing blow) on an enemy gets the score, except for bosses its always shared.
-
+* HUD: minimal, at the top of screen only, not over the play area. Shows number of lifes, score.
 
 ## Prototype
 * 1 level (hand-built), with placeholder graphics and sounds
