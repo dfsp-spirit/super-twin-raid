@@ -14,12 +14,13 @@
 ## Required Features:
 
 * Auto-scrolling game world in 2D, it never stops, not even at bosses.
-* Asymmetrical gameplay option: one can play in helicopter or jeep, and in coop, one of each. The levels are designed in a way that it is possible to finish them alone and the jeep or the helicopter. We may need to mark enemies as coop-only to adjust difficulty, maybe even heli-only or jeep-only in single-player later. Or adapt difficulty in other ways.
+* Asymmetrical gameplay option: one can play in helicopter or jeep, and in coop, one of each. The levels are designed in a way that it is possible to finish them alone and the jeep or the helicopter. We may need to mark enemies as coop-only to adjust difficulty, maybe even heli-only or jeep-only in single-player later. Or adapt difficulty in other ways, e.g., scale enemy health.
 * Player Movement:
     - Both the heli and the jeep can move left and right (forward and backwards, from their own perspective) within the moving field of view.
     - The heli can also move up and down (including 45 degrees down/up)
     - The jeep can jump, allowing it to evade rockets and jump over fast suicide-car style enemies or anti-vehicle mines
     - The ground is always completely flat, so there is no need for terrain following for the jeep.
+    - The jump high of the jeep is low, and the heli has a minimal height, so actually they cannot even overlap / collide. Whether you play alone or in coop also thus does not affect the space you have to dodge enemy attacks in any way.
 * Enemy movement: Enemies can just go off-screen or stay on screen forever, depending on enemy type (like suicide cars trying to hit jeep player, or fixed stuff like ground turrets, they will just leave screen if not destroyed). Some heli enemies may linger around if not destroyed. In any case, it never happens that screen/world is stuck while the game waits for player to clear a wave.
 * In coop, both players see the SAME screen all the time: its not split-screen, its shared screen.
 * Player weapons that enable a single player to still complete the maps:
@@ -36,16 +37,27 @@
         * guided missiles, that can be destroyed by player fire
         * unguided missiles, that cannot be destroyed by player fire
 * Shields that give temporary invulnerability, but can also alternatively be shot with a few hits to explode, dealing massive damage to all enemies on screen. Exploding a shield also explodes all other shield powerups currently on the screen (but not shields which the player already has active)
-* Collisions kill the player, unless they have a shield active, in which case the player deals high damage in short time intervalls to enemies they touch
+* Collisions kill the player, unless they have a shield active, in which case the player deals high damage in short time intervalls to enemies they touch. In coop, the heli and jeep cannot collide (due to different space/heli min flying height) or hurt each other
 * Killing enemies increases ones score
-* Players have a (shared in coop) limited number of lives, and a number of continues (configurable, in settings). Using a continue resets your score to 0.
+* Players have a (shared in coop) limited number of lives, and a number of continues (configurable, in settings). Using a continue resets your score to 0 and restarts the current level.
 * The game should prevent the annoying shmup trap where a player is lost because they were hit once and now do not have the double-shot (or other powerups) anymore, and this lack of firepower leads to inevitable death later. Preventing such issues can be achieved, for example, by providing again the double-shot power-up before bosses or hard parts of a map. Picking up a power-up you already have should give a score bonus instead.
 * It would be very nice to have an easy-to-use level editor, maybe even campaign editor (just a list of levels with ordering).
 * One should be able to unlock something by finishing levels. Not permanent upgrades, but maybe a different skin for your vehicle or something? Need to think about this a bit more.
+* Amount of content:
+    - 5 levels: Greenish/temperate area, seascape, yellow desert, brown desert, night in the mountains.
+    - Each has a few minutes of play time and they introduce new harder enemies (but older enemies also can occur, so variety also increases).
+    - Each level features a boss at the end.
+* Scoring: in coop, the player who gets the last hit (killing blow) on an enemy gets the score, except for bosses its always shared.
+
+
+## Prototype
+* 1 level (hand-built), with placeholder graphics and sounds
+
 
 ## Required only at late stage in development
 * More complex goose miniboss with animation that gets constructed in the air out of several flying parts
-* Proper sounds, music, etc
+* Proper sounds, music, etc. But we need some placeholder sounds for the prototype.
+* Level editor
 
 
 ## Explicitely out of scope:
