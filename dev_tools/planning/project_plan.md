@@ -69,12 +69,14 @@
             * b: alternative for cannon angle up
             * n: alternative for cannon angle down
             * m: alternative for shoot
+            * s: toggle auto-fire on/off
         * Helicopter
             * arrow-up: fly up
             * arrow-down: fly down
             * arrow-left: fly left
             * arrow-right: fly right (combinations like up+right = 45 degrees up are possible)
             * right control: shoot
+            * right shift: toggle auto-fire on/off
         * General:
             * pause key: pause/continue
             * ESC: open menu (pauses as well)
