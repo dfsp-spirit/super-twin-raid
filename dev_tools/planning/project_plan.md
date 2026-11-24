@@ -88,14 +88,17 @@
     - Game Controller
         * Jeep
             * left DPAD or left stick: move left/right.
-            * right trigger or A (lower of the 4 buttons on the right): shoot
-            * Y (left of the 4 buttons on the right): jump
+            * right trigger or X (left-most of the 4 buttons on the right): shoot
+            * A (lower of the 4 buttons on the right): jump
             * left/right shoulder button: change cannon angle (left: up, right: down/to front)
+            * Y (top of the 4 buttons on the right): toggle auto-fire on/off
         * Helicopter:
             * left DPAD or left stick: move
-            * right trigger or A (lower of the 4 buttons on the right): shoot
+            * right trigger or X (left of the 4 buttons on the right): shoot
+            * Y (top of the 4 buttons on the right): toggle auto-fire on/off
         * General:
             * menu button: menu
+            * pause: pause
 
 ## Prototype
 * 1 level (hand-built), with placeholder graphics and sounds
